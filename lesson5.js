@@ -2,8 +2,7 @@
 
 const path = require('path');
 
-const myPath =
-    'F:/workplace/Web_Dev(practice)/NodeJS/Node.js_Express.js_MongoDB_Practice/lesson5.js';
+const myPath =    'F:/workplace/Web_Dev(practice)/NodeJS/Node.js_Express.js_MongoDB_Practice/lesson5.js';
 
 console.log(path.basename(myPath));
 console.log(path.dirname(myPath));
@@ -34,3 +33,14 @@ console.log(data.toString());
 fs.readFile('myFile.txt', (err, data) => {
     console.log(data.toString());
 });
+
+// Event module
+
+const School = require('./School');
+
+const school = new School();
+school.on('bellRing', ({ period, text }) => {
+    console.log(`we need to run, because ${period} ${text}`);
+});
+
+school.startPeriod();
